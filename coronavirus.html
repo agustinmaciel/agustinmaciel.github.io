@@ -1,0 +1,631 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>AgustinMaciel.com</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="" class="image avatar"><img src="images/logo.png" alt="" /></a>
+					<h1>Experienced IT professional with 6+ years expertise in business intelligence and descriptive analytics.</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Analysis of Coronavirus in Uruguay</h1>	
+							<img src="images/Coronavirus.jpg">						
+						</header>
+						<p>Power BI project with current and historical data of Coronavirus infections in Uruguay and the region.</p>
+						
+					</section>
+
+				<!-- Two -->
+					<section id="tree">
+									
+						
+						<p>The aim of this project is to showcase the current and historical trend in Coronavirus infections in Uruguay, and compare them to the regional trends.</p>
+
+<p>The project is already live and automatically updating information on a daily basis and can be seen here: 
+<a href="https://bit.ly/3a6ggZT" target="_blank">Coronavirus in Uruguay</a></p>
+
+<h1 id="table-of-contents">Table of Contents</h1>
+
+<h2 id="1-files-description">1. Files Description</h2>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Coronavirus in Uruguay.pbix:</code> The latest Power BI file with all the data visualizations.</li>
+  <li><code class="language-plaintext highlighter-rouge">RegionalHealthForce.xlsx:</code> The Excel file with the static data (nurses, medics and hospital beds).</li>
+  <li><code class="language-plaintext highlighter-rouge">Images Folder:</code> All the images used in the readme.</li>
+</ol>
+
+<h2 id="2-technologies-used">2. Technologies Used:</h2>
+
+<ul>
+  <li>Power BI Desktop (creation of data model and visualizations)</li>
+  <li>Power BI Service (daily data refresh and publish to web)</li>
+  <li>GitHub (data files storage)</li>
+  <li>Excel (data sources)</li>
+</ul>
+
+<h2 id="3-data-sources">3. Data Sources:</h2>
+
+<ol>
+  <li>
+    <p>For daily cases, daily deaths and daily recovered patients data:
+<a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a>.</p>
+  </li>
+  <li>
+    <p>For nurses, medics and hospital beds data:
+<a href="https://apps.who.int/gho/data/node.home" target="_blank">WHO Global Health Observatory data repository</a>.</p>
+  </li>
+  <li>
+    <p>For daily tests data:
+<a href="https://github.com/owid/covid-19-data/tree/master/public/data" target="_blank">Our World in Data repository</a>.</p>
+  </li>
+</ol>
+
+<h2 id="4-data-model">4. Data Model:</h2>
+<p><img src="/Images/CoronavirusDataModel.PNG" alt="" /></p>
+
+<h3 id="tables-and-fields">Tables and fields</h3>
+
+<ul>
+  <li>
+    <h4 id="dates">Dates</h4>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Data Type</th>
+      <th>Description</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Date (bins)</td>
+      <td>date</td>
+      <td>Aggregated cases dates grouped by weekly bins</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Dates Reformatted</td>
+      <td>date</td>
+      <td>Aggregated cases dates with format changed from English to Spanish</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Max Date</td>
+      <td>date</td>
+      <td>Calculated measure to create the week over week animation in the scatter plot</td>
+      <td>JHU CSSE</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <h4 id="cases">Cases</h4>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Data Type</th>
+      <th>Description</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Argentina</td>
+      <td>integer</td>
+      <td>Aggregated cases in Argentina</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Brazil</td>
+      <td>integer</td>
+      <td>Aggregated cases in Brazil</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Chile</td>
+      <td>integer</td>
+      <td>Aggregated cases in Chile</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>date</td>
+      <td>Date of aggregated cases</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Dates Reformatted</td>
+      <td>date</td>
+      <td>Dates of aggregated cases with format changed from English to Spanish</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Index</td>
+      <td>integer</td>
+      <td>Table Index</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>NewCasesUY</td>
+      <td>integer</td>
+      <td>Calculated column with the new daily cases in Uruguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Original Date</td>
+      <td>date</td>
+      <td>Original date of aggregated cases</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Paraguay</td>
+      <td>integer</td>
+      <td>Aggregated cases in Paraguay</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>PrevObjUY</td>
+      <td>integer</td>
+      <td>Calculated column with the aggregated cases value from the previous date for Uruguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Uruguay</td>
+      <td>integer</td>
+      <td>Aggregated cases in Uruguay</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>CasesPopAR</td>
+      <td>integer</td>
+      <td>Calculated measure of total cases per 10.000 population in Argentina</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>CasesPopBR</td>
+      <td>integer</td>
+      <td>Calculated measure of total cases per 10.000 population in Brazil</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>CasesPopCH</td>
+      <td>integer</td>
+      <td>Calculated measure of total cases per 10.000 population in Chile</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>CasesPopPY</td>
+      <td>integer</td>
+      <td>Calculated measure of total cases per 10.000 population in Paraguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>CasesPopUY</td>
+      <td>integer</td>
+      <td>Calculated measure of total cases per 10.000 population in Uruguay</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <h4 id="deaths">Deaths</h4>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Data Type</th>
+      <th>Description</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Argentina</td>
+      <td>integer</td>
+      <td>Aggregated deaths in Argentina</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Brazil</td>
+      <td>integer</td>
+      <td>Aggregated deaths in Brazil</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Chile</td>
+      <td>integer</td>
+      <td>Aggregated deaths in Chile</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Dates Reformatted</td>
+      <td>date</td>
+      <td>Dates of aggregated deaths with format changed from English to Spanish</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>DeathsUY</td>
+      <td>integer</td>
+      <td>Calculated column with the new daily deaths in Uruguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Index</td>
+      <td>integer</td>
+      <td>Table Index</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Paraguay</td>
+      <td>integer</td>
+      <td>Aggregated deaths in Paraguay</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>PrevObjAR</td>
+      <td>integer</td>
+      <td>Calculated column with the aggregated deaths value from the previous date for Argentina</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>PrevObjBR</td>
+      <td>integer</td>
+      <td>Calculated column with the aggregated deaths value from the previous date for Brazil</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>PrevObjCH</td>
+      <td>integer</td>
+      <td>Calculated column with the aggregated deaths value from the previous date for Chile</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>PrevObjPY</td>
+      <td>integer</td>
+      <td>Calculated column with the aggregated deaths value from the previous date for Paraguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>PrevObjUY</td>
+      <td>integer</td>
+      <td>Calculated column with the aggregated deaths value from the previous date for Uruguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Uruguay</td>
+      <td>integer</td>
+      <td>Aggregated deaths in Uruguay</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>DeatsPopAR</td>
+      <td>integer</td>
+      <td>Calculated measure of total deaths per 10.000 population in Argentina</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>DeatsPopBR</td>
+      <td>integer</td>
+      <td>Calculated measure of total deaths per 10.000 population in Brazil</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>DeatsPopCH</td>
+      <td>integer</td>
+      <td>Calculated measure of total deaths per 10.000 population in Chile</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>DeatsPopPY</td>
+      <td>integer</td>
+      <td>Calculated measure of total deaths per 10.000 population in Paraguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>DeatsPopUY</td>
+      <td>integer</td>
+      <td>Calculated measure of total deaths per 10.000 population in Uruguay</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <h4 id="recovered">Recovered</h4>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Data Type</th>
+      <th>Description</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dates Reformatted</td>
+      <td>date</td>
+      <td>Dates of aggregated recovered with format changed from English to Spanish</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Index</td>
+      <td>integer</td>
+      <td>Table Index</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Original Date</td>
+      <td>date</td>
+      <td>Original date of aggregated recovered</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>PrevObjRecUY</td>
+      <td>integer</td>
+      <td>Calculated column with the aggregated recovered value from the previous date for Uruguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>RecoveredUY</td>
+      <td>integer</td>
+      <td>Calculated column with the new daily recovered in Uruguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Uruguay</td>
+      <td>integer</td>
+      <td>Aggregated recovered in Uruguay</td>
+      <td>JHU CSSE</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <h4 id="tests">Tests</h4>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Data Type</th>
+      <th>Description</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Country</td>
+      <td>string</td>
+      <td>Country</td>
+      <td>OWID</td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>date</td>
+      <td>Dates of total tests</td>
+      <td>OWID</td>
+    </tr>
+    <tr>
+      <td>Population</td>
+      <td>integer</td>
+      <td>Total population of the country</td>
+      <td><strong>WHO</strong></td>
+    </tr>
+    <tr>
+      <td>Tests</td>
+      <td>integer</td>
+      <td>Total tests in the country</td>
+      <td>OWID</td>
+    </tr>
+    <tr>
+      <td>Tests (per 10 000 population)</td>
+      <td>integer</td>
+      <td>Calculated column with the total tests per 10.000 population in the country</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <h4 id="health-force-and-population">Health Force and Population</h4>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Data Type</th>
+      <th>Description</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Country</td>
+      <td>string</td>
+      <td>Country</td>
+      <td>WHO</td>
+    </tr>
+    <tr>
+      <td>Hospital Beds (per 10.000 population)</td>
+      <td>integer</td>
+      <td>Total hospital beds per 10.000 population in the country</td>
+      <td>WHO</td>
+    </tr>
+    <tr>
+      <td>Medical Doctors (per 10.000 population)</td>
+      <td>integer</td>
+      <td>Total medical doctors per 10.000 population in the country</td>
+      <td>WHO</td>
+    </tr>
+    <tr>
+      <td>Nurses (per 10.000 population)</td>
+      <td>integer</td>
+      <td>Total nurses per 10.000 population in the country</td>
+      <td>WHO</td>
+    </tr>
+    <tr>
+      <td>Population</td>
+      <td>integer</td>
+      <td>Total population of the country</td>
+      <td>WHO</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <h4 id="cases-and-deaths">Cases and Deaths</h4>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Data Type</th>
+      <th>Description</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cases</td>
+      <td>integer</td>
+      <td>Aggregated cases</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Country</td>
+      <td>string</td>
+      <td>Country</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Dates Reformatted</td>
+      <td>date</td>
+      <td>Aggregated cases and deaths dates with format changed from English to Spanish</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Deaths</td>
+      <td>integer</td>
+      <td>Aggregated deaths</td>
+      <td>JHU CSSE</td>
+    </tr>
+    <tr>
+      <td>Index</td>
+      <td>integer</td>
+      <td>Table Index</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <h4 id="calcs">Calcs</h4>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Data Type</th>
+      <th>Description</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DeathRateUY</td>
+      <td>decimal</td>
+      <td>Calculated measure with the rate of total deaths per total cases in Uruguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>RecoveredRateUY</td>
+      <td>decimal</td>
+      <td>Calculated measure with the rate of total recovered per total cases in Uruguay</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Refresh Date</td>
+      <td>date</td>
+      <td>Latest date of data refresh</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+
+      </section>
+	  
+	  
+					
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/agustinmaciel/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="https://github.com/agustinmaciel" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						
+					</ul>
+					<ul class="copyright">
+						<li>&copy; AgustinMaciel.com</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
