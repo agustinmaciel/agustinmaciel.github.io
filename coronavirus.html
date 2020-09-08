@@ -15,31 +15,31 @@
 					<h1>Experienced IT professional with 6+ years expertise in business intelligence and descriptive analytics.</h1>
 				</div>
 			</header>
-
 		<!-- Main -->
 			<div id="main">
-
-				<!-- One -->
-					<section id="one">
+		<!-- One --> <!-- <section id="one"> -->
 						<header class="major">
-							<h1>Analysis of Coronavirus in Uruguay</h1>	
+							<h1><b>Analysis of Coronavirus in Uruguay</b></h1>	
 							<img src="images/Coronavirus.jpg">						
 						</header>
-						<p>Power BI project with current and historical data of Coronavirus infections in Uruguay and the region.</p>
-						
-					</section>
-
-				<!-- Two -->
-					<section id="tree">
-									
-						
-						<p>The aim of this project is to showcase the current and historical trend in Coronavirus infections in Uruguay, and compare them to the regional trends.</p>
-
-<p>The project is already live and automatically updating information on a daily basis and can be seen here: 
-<a href="https://bit.ly/3a6ggZT" target="_blank">Coronavirus in Uruguay</a></p>
+					<!--	</section> -->
+		<!-- Two -->
+			<section id="tree">
+				<h2>Overview</h2>
+				<p>The aim of this project is to showcase the current and historical trend in Coronavirus infections in Uruguay, and compare them to the regional trends.</p>
+				<p>The project is already live and automatically updating information on a daily basis and can be seen by clicking on this link: 
+					<a href="https://bit.ly/3a6ggZT" target="_blank">Coronavirus in Uruguay</a></p>
 
 <h1 id="table-of-contents">Table of Contents</h1>
 
+<ol>
+  <li><a href="#1-files-description">Files Description</a></li>
+  <li><a href="#2-technologies-used">Technologies Used</a></li>
+  <li><a href="#3-data-sources">Data Sources</a></li>
+  <li><a href="#4-data-model">Data Model</a></li>
+</ol> 
+				
+				
 <h2 id="1-files-description">1. Files Description</h2>
 
 <ol>
@@ -60,31 +60,44 @@
 <h2 id="3-data-sources">3. Data Sources:</h2>
 
 <ol>
-  <li>
-    <p>For daily cases, daily deaths and daily recovered patients data:
-<a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a>.</p>
-  </li>
-  <li>
-    <p>For nurses, medics and hospital beds data:
-<a href="https://apps.who.int/gho/data/node.home" target="_blank">WHO Global Health Observatory data repository</a>.</p>
-  </li>
-  <li>
-    <p>For daily tests data:
-<a href="https://github.com/owid/covid-19-data/tree/master/public/data" target="_blank">Our World in Data repository</a>.</p>
-  </li>
+  <li><p>For daily cases, daily deaths and daily recovered patients data:
+<a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a>.</p></li>
+  <li><p>For nurses, medics and hospital beds data:
+<a href="https://apps.who.int/gho/data/node.home" target="_blank">WHO Global Health Observatory data repository</a>.</p></li>
+  <li><p>For daily tests data:
+<a href="https://github.com/owid/covid-19-data/tree/master/public/data" target="_blank">Our World in Data repository</a>.</p></li>
 </ol>
 
 <h2 id="4-data-model">4. Data Model:</h2>
 <p><img src="/Images/CoronavirusDataModel.PNG" alt="" /></p>
 
 <h3 id="tables-and-fields">Tables and fields</h3>
-
+				
+<ol>
+  <li><a href="#dates">Dates</a></li>
+  <li><a href="#cases">Cases</a></li>
+  <li><a href="#deaths">Deaths</a></li>
+  <li><a href="#recovered">Recovered</a></li>
+  <li><a href="#tests">Tests</a></li>
+  <li><a href="#health-force-and-population">Health Force and Population</a></li>	
+  <li><a href="#cases-and-deaths">Cases and Deaths</a></li>	
+  <li><a href="#calcs">Calcs</a></li>	
+</ol> 
+			
+				
+				
 <ul>
   <li>
     <h4 id="dates">Dates</h4>
   </li>
 </ul>
 
+				<style>
+table, th, td {
+  border: 1px solid black;
+}
+	</style>				
+					
 <table>
   <thead>
     <tr>
