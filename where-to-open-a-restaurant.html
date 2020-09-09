@@ -17,20 +17,19 @@
 			</header>
 		<!-- Main -->
 			<div id="main">
-		<!-- One -->  <!-- <section id="one"> -->
-						<header class="major">
+		<!-- One -->  <!-- <section id="one"> <header class="major">-->
+						<section id="tree">
 							<h1><b>Where to open a restaurant?</b></h1>
-							<img src="images/Restaurant.jpg">								
-						</header>						
-				<!-- 	</section>  -->
+							<img src="images/Restaurant.jpg">													
+				<!-- 	</section>  </header>-->
 		<!-- Two -->
-					<section id="tree">
-							<h1>Overview</h1>							
-						<p>In this project we will try to find an optimal location for a restaurant. Specifically, this report will be targeted to stakeholders interested in opening a restaurant in Montevideo, Uruguay.<br />
-						We will first analyze the neighborhoods to identify the median income and total population in order to create a ranking based on these metrics. <br />
-						Then we will try to detect which neighborhood has the least number of food venues and from there we will choose a location that is not already too crowded with restaurants.<br />
-						We will use our data science skills to generate a few most promising neighborhood based on these criteria.<br />
-						<h3><a href="https://github.com/agustinmaciel/Where-to-open-a-restaurant/blob/master/Capstone_Final%20Project.ipynb" target="_blank">Link to the Jupyter Notebook with the code (GitHub)</a></h3></p>	
+					
+				<h1>Overview</h1><br>							
+				In this project we will try to find an optimal location for a restaurant. Specifically, this report will be targeted to stakeholders interested in opening a restaurant in Montevideo, Uruguay.<br />
+				We will first analyze the neighborhoods to identify the median income and total population in order to create a ranking based on these metrics. <br />
+				Then we will try to detect which neighborhood has the least number of food venues and from there we will choose a location that is not already too crowded with restaurants.<br />
+				We will use our data science skills to generate a few most promising neighborhood based on these criteria.<br />
+				<p style="font-size:130%;"><a href="https://github.com/agustinmaciel/Where-to-open-a-restaurant/blob/master/Capstone_Final%20Project.ipynb" target="_blank">Link to the Jupyter Notebook with the code (GitHub)</a></p>	
 
 <h1 id="table-of-contents">Table of Contents</h1>
 
@@ -46,13 +45,13 @@
 						
 <h2 id="1-files-description">1. Files Description:</h2>
 
-<ol>
+<ul>
   <li><code class="language-plaintext highlighter-rouge">Capstone_Final Project.ipynb:</code> The Jupyter Notebook with the projects’ code.</li>
   <li><code class="language-plaintext highlighter-rouge">barrios.geojson:</code> The updated json file with the latitude and longitude of each Montevideo neighborhoods’ center.</li>
   <li><code class="language-plaintext highlighter-rouge">ingresos.csv:</code> The Montevideo income raw data segmented by neighborhood.</li>
   <li><code class="language-plaintext highlighter-rouge">poblacion.csv:</code> The Montevideo population raw data segmented by neighborhood.</li>
   <li><code class="language-plaintext highlighter-rouge">Capstone Report.pdf:</code> The pdf with the projects’ report detailing the steps, data sources and methodology.</li>
-</ol>
+</ul>
 
 <h2 id="2-technologies-used">2. Technologies Used:</h2>
 
@@ -66,14 +65,14 @@
 <h2 id="3-data-sources">3. Data Sources:</h2>
 
 <ul>
-  <li><p>Median income by neighborhood:
-<a href="http://www.ine.gub.uy/encuesta-continua-de-hogares1" target="_blank">National Statistics Institute data repository</a>.</p></li>
-  <li><p>Population by neighborhood:
-<a href="http://www.ine.gub.uy/web/guest/censos1" target="_blank">National Statistics Institute data repository</a>.</p></li>
-  <li><p>Segmentation of the neighborhoods within the city:
-<a href="https://github.com/vierja/geojson_montevideo" target="_blank">GitHub repository</a>.</p></li>
-  <li><p>Restaurants’ type and location by neighborhood:
-<a href="https://developer.foursquare.com/" target="_blank">Foursquare API</a>.</p></li>
+  <li>Median income by neighborhood:
+<a href="http://www.ine.gub.uy/encuesta-continua-de-hogares1" target="_blank">National Statistics Institute data repository</a>.</li>
+  <li>Population by neighborhood:
+<a href="http://www.ine.gub.uy/web/guest/censos1" target="_blank">National Statistics Institute data repository</a>.</li>
+  <li>Segmentation of the neighborhoods within the city:
+<a href="https://github.com/vierja/geojson_montevideo" target="_blank">GitHub repository</a>.</li>
+  <li>Restaurants’ type and location by neighborhood:
+<a href="https://developer.foursquare.com/" target="_blank">Foursquare API</a>.</li>
 </ul>
 
 <h2 id="4-methodology">4. Methodology:</h2>
